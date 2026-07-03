@@ -9,8 +9,10 @@ class Person:
 
 def create_person_list(people: list) -> list:
     Person.people = {}
-    person_list = [Person(person_data["name"], person_data["age"]) \
-                   for person_data in people]
+    person_list = [
+        Person(person_data["name"], person_data["age"])
+        for person_data in people
+    ]
 
     for person_data, person in zip(people, person_list):
         spouse_name = person_data.get("wife") or person_data.get("husband")
